@@ -1,0 +1,351 @@
+.container
+{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(75, 153, 179);
+    position: relative;
+    text-align: center;
+}
+
+.overlay
+{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: rgba(63, 70, 77, 0.7);   
+}
+
+.portfolio_page
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.title
+{
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: appearTitle 0.8s forwards ease ;
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+@keyframes appearTitle {
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+.portfolio_section
+{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+
+    border-radius: 12px;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    background: rgba(245, 245, 245, 0.829);
+}
+
+.portfolio_section::-webkit-scrollbar
+{
+display: none;
+}
+.portfolio_section .card
+{
+    position: relative;
+    height: 250px;
+    background: rgba(233, 232, 194, 0.2);
+    display: flex;
+    width: 40%;
+    margin: 1rem 4rem;
+    box-shadow: 20px 5px 25px rgba(71, 71, 71, 0.5);
+    border-radius: 12px;
+    border:1ps solid yellow;
+}
+
+.portfolio_section .card:hover
+{
+    box-shadow: 20px 5px 25px rgba(71, 71, 71, 0.2);   
+}
+.portfolio_section .card .topic_overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    border-radius: 12px;
+    color:white;
+}
+
+.portfolio_section .card .topic_overlay .shadow
+{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.portfolio_section .card:hover .topic_overlay
+{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: lightblue;
+    color:black;
+}
+
+.portfolio_section .card:hover .content
+{
+    padding-left: 0.2rem;
+}
+.portfolio_section .card .content
+{
+    position: absolute;
+    right: 0;
+    width: calc(100%);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.portfolio_section .card .content div
+{
+    width: calc(60%);
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio_section .card .content h3
+{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.portfolio_section .card .content h3
+{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+
+.portfolio_section .card .content a
+{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+
+.portfolio_section .card:hover .content
+{
+    padding-left: 0.2rem;
+    margin-left: 0%;
+}
+/* ##### Mobile ##### */
+
+@media screen and (max-width: 1605px)
+{
+    .portfolio_section
+    {
+        width: calc(96% );
+    }
+}
+
+@media screen and (max-width: 1605px)
+{
+    .portfolio_section .card
+    {
+        height: 250px;
+        width: 35%;
+        margin: 30px 0;
+        margin: 1rem 4rem;
+    }
+}
+
+@media screen and (max-width: 1320px)
+{
+   
+    .portfolio_section .card
+    {
+        height: 250px;
+        width: 45%;
+        margin: 1rem 4rem;
+    }
+    .portfolio_section .card:hover .content
+    {
+        /* padding-left: 4.5rem; */
+        padding-left: 0.5rem;
+    }   
+}
+
+
+@media screen and (max-width: 1020px)
+{
+   
+    .portfolio_section
+    {
+        width: calc(90% );
+    }
+    .portfolio_section .card
+    {
+        height: 250px;
+        width: 48%;
+        margin: 1rem 1.5rem;
+       
+    }
+
+   
+
+ 
+    .portfolio_section .card .content h3
+    {
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+
+    .portfolio_section .card .content a
+    {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 10px;
+        background: #333;
+        text-decoration: none;
+        color: #fff;
+
+    }
+    
+}
+
+@media screen and (max-width: 960px) 
+{
+   
+
+    .portfolio_section .card
+    {
+        height: 250px;
+        width: 54%;
+        margin: 1rem 1rem;
+
+    }
+   
+}
+
+@media screen and (max-width: 880px) {
+    .portfolio_section .card
+    {
+        height: 250px;
+        width: 64%;
+        margin: 1rem 1rem;
+
+    }
+}
+ 
+@media screen and (max-width: 768px) 
+{   
+    .portfolio_section .card
+    {
+        max-width: 70%;
+        left: 0;
+        padding: 0;
+    }
+
+    .portfolio_section .card:hover .topic_overlay
+    {
+        transition: 0.4s ease-in-out;
+        background: lightblue;
+    }
+
+    .portfolio_section .card:hover .content
+    {
+        padding-left: 0rem;
+    }
+
+ 
+    .portfolio_section .card .topic_overlay
+    {
+        position: relative;
+    }
+    
+    .portfolio_section .card .topic_overlay,
+    .portfolio_section .card:hover .topic_overlay
+    {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .portfolio_section .card .topic_overlay
+    {
+        z-index: 1;
+        transform-origin: bottom;
+    }
+
+    .portfolio_section .card:hover .topic_overlay
+    {
+       transform: translateY(-100%) rotateX(90deg);
+    }
+
+    .portfolio_section .card .content
+    {
+        width: 100%;
+        right: 0;
+        height: 100%;
+        transform-origin: top;
+       transform: translateY(100%) rotateX(90deg);
+       position: absolute;
+     
+    }
+
+    .portfolio_section .card:hover .content
+    {
+       transform: translateY(0) rotateX(0deg);
+    }
+}
